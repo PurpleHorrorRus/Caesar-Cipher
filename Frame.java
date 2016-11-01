@@ -21,11 +21,11 @@ public class Frame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		encrBtn = new JButton("Шифровка");
+		encrBtn = new JButton("РЁРёС„СЂРѕРІРєР°");
 		encrBtn.setBounds(62, 52, 130, 51);
 		contentPane.add(encrBtn);
 		
-		decrBtn = new JButton("Дешифровка");
+		decrBtn = new JButton("Р”РµС€РёС„СЂРѕРІРєР°");
 		decrBtn.setBounds(62, 104, 130, 51);
 		contentPane.add(decrBtn);
 		
@@ -33,7 +33,7 @@ public class Frame extends JFrame {
 		status.setBounds(10, 191, 241, 14);
 		contentPane.add(status);
 		
-		setTitle("Шифр Цезаря");
+		setTitle("РЁРёС„СЂ Р¦РµР·Р°СЂСЏ");
 		
 		setVisible(true);
 	}
