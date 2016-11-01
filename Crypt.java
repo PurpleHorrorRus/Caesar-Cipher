@@ -10,8 +10,8 @@ public class Crypt extends Information {
 	void encrypt(String exp, int deg){
 		exp = exp.toUpperCase();
 		for(int i = 0, b = 0; i < exp.length(); i++, b++){
-			if(i > 0 && b < exp.length() && exp.charAt(i) == ' ') exp_encr += " "; //Ïðîáåë ìåæäó ñëîâàìè
-			else { //Øèôðîâêà
+			if(i > 0 && b < exp.length() && exp.charAt(i) == ' ') exp_encr += " "; //ÐŸÑ€Ð¾Ð±ÐµÐ» Ð¼ÐµÐ¶Ð´Ñƒ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸
+			else { //Ð¨Ð¸Ñ„Ñ€Ð¾Ð²ÐºÐ°
 				if(Character.isLetter(exp.charAt(i))){
 					y = (findIndexInAlphabet(exp.charAt(i)) + deg) % alphabet.length;
 					exp_encr += alphabet[y];
@@ -24,8 +24,8 @@ public class Crypt extends Information {
 	void decrypt(String exp, int deg){
 		exp = exp.toUpperCase();
 		for(int i = 0, b = 0; i < exp.length(); i++, b++){
-			if(i > 0 && b < exp.length() && exp.charAt(i) == ' ') exp_decr += " "; //Ïðîáåë ìåæäó ñëîâàìè
-			else { //Äåøèôðîâêà
+			if(i > 0 && b < exp.length() && exp.charAt(i) == ' ') exp_decr += " "; //ÐŸÑ€Ð¾Ð±ÐµÐ» Ð¼ÐµÐ¶Ð´Ñƒ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸
+			else { //Ð”ÐµÑˆÐ¸Ñ„Ñ€Ð¾Ð²ÐºÐ°
 				if(Character.isLetter(exp.charAt(i))){
 					x = (findIndexInAlphabet(exp.charAt(i)) - deg + alphabet.length) % alphabet.length;
 					exp_decr += alphabet[x];
