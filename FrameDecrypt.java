@@ -33,23 +33,23 @@ public class FrameDecrypt extends JFrame {
 		decrText.setBounds(10, 77, 408, 38);
 		contentPane.add(decrText);
 		
-		JLabel label = new JLabel("Наиболее успешные сдвиги");
+		JLabel label = new JLabel("РќР°РёР±РѕР»РµРµ СѓСЃРїРµС€РЅС‹Рµ СЃРґРІРёРіРё");
 		label.setBounds(257, 20, 161, 14);
 		contentPane.add(label);
 		
-		acceptBtn = new JButton("Принять");
+		acceptBtn = new JButton("РџСЂРёРЅСЏС‚СЊ");
 		acceptBtn.setBounds(59, 134, 144, 23);
 		contentPane.add(acceptBtn);
 		
-		declineBtn = new JButton("Отклонить");
+		declineBtn = new JButton("РћС‚РєР»РѕРЅРёС‚СЊ");
 		declineBtn.setBounds(213, 134, 144, 23);
 		contentPane.add(declineBtn);
 		
-		checkMostDegBox = new JCheckBox("Наиболее удачные");
+		checkMostDegBox = new JCheckBox("РќР°РёР±РѕР»РµРµ СѓРґР°С‡РЅС‹Рµ");
 		checkMostDegBox.setBounds(10, 47, 179, 23);
 		contentPane.add(checkMostDegBox);
 		
-		setTitle("Выбрать сдвиг");
+		setTitle("Р’С‹Р±СЂР°С‚СЊ СЃРґРІРёРі");
 		
 	}
 }
