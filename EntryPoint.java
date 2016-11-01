@@ -32,7 +32,7 @@ public class EntryPoint {
 	private static int deg = 1;
 	private MouseAdapter eventAccept, eventDecline; private ActionListener eventMost;
 	
-	//Ошибки
+	//РћС€РёР±РєРё
 	private String 
 	create = "crate",
 	write = "wirte", 
@@ -62,16 +62,16 @@ public class EntryPoint {
 		encrFile = new File(crypt.ABS_PATH_TO_FILE+"_encr");
 		
 		try { textScan = new Scanner(new FileReader(choosed)); while(textScan.hasNextLine()) crypt.source += textScan.nextLine(); 
-		System.out.println("Файл прочитан."); } 
+		System.out.println("Р¤Р°Р№Р» РїСЂРѕС‡РёС‚Р°РЅ."); } 
 		catch (FileNotFoundException e1) { throwError(read); }
 		
 		textScan.close();
 		
 		if(!encrFile.exists())
-			try { encrFile.createNewFile(); System.out.println("Файл успешно создан."); } 
+			try { encrFile.createNewFile(); System.out.println("Р¤Р°Р№Р» СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ."); } 
 		catch (IOException e) { throwError(create); }
 		
-		String degOP = JOptionPane.showInputDialog(null, "Введите необходимый сдвиг:", "Сдвиг", JOptionPane.QUESTION_MESSAGE);
+		String degOP = JOptionPane.showInputDialog(null, "Р’РІРµРґРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјС‹Р№ СЃРґРІРёРі:", "РЎРґРІРёРі", JOptionPane.QUESTION_MESSAGE);
 		int deg = 0;
 		try { deg = Integer.parseInt(degOP); } catch(NumberFormatException ex) { throwError(digit); }
 		
@@ -92,13 +92,13 @@ public class EntryPoint {
 		decrFile = new File(crypt.ABS_PATH_TO_FILE+"_decr");
 		
 		try { textScan = new Scanner(new FileReader(choosed)); while(textScan.hasNextLine()) crypt.exp_encr += textScan.nextLine(); 
-		System.out.println("Файл прочитан."); } 
+		System.out.println("Р¤Р°Р№Р» РїСЂРѕС‡РёС‚Р°РЅ."); } 
 		catch (FileNotFoundException e1) { throwError(read); }
 		
 		textScan.close();
 		
 		if(!decrFile.exists())
-			try { decrFile.createNewFile(); System.out.println("Файл успешно создан."); } 
+			try { decrFile.createNewFile(); System.out.println("Р¤Р°Р№Р» СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ."); } 
 		catch (IOException e) { throwError(create); }
 		
 		report();
@@ -108,7 +108,7 @@ public class EntryPoint {
 		int deg = 1;
 		
 		crypt.decrypt(crypt.exp_encr, deg);
-		frameDecr.decrText.setText("Сдвиг " + deg + ": " + crypt.exp_decr);
+		frameDecr.decrText.setText("РЎРґРІРёРі " + deg + ": " + crypt.exp_decr);
 		
 		
 		eventAccept = new MouseAdapter() {
@@ -143,7 +143,7 @@ public class EntryPoint {
 						EntryPoint.deg += 1;
 						crypt.decrypt(crypt.exp_encr,  EntryPoint.deg);
 						frameDecr.decrText.setText("");
-						frameDecr.decrText.setText("Сдвиг " +  EntryPoint.deg + ": " + crypt.exp_decr);
+						frameDecr.decrText.setText("РЎРґРІРёРі " +  EntryPoint.deg + ": " + crypt.exp_decr);
 					}
 				}
 			};
@@ -167,7 +167,7 @@ public class EntryPoint {
 					frameDecr.most_popular_degs.removeActionListener(eventMost);
 					crypt.exp_decr = "";
 					crypt.decrypt(crypt.exp_encr, EntryPoint.deg);
-					frameDecr.decrText.setText("Сдвиг " +  EntryPoint.deg + ": " + crypt.exp_decr);
+					frameDecr.decrText.setText("РЎРґРІРёРі " +  EntryPoint.deg + ": " + crypt.exp_decr);
 					frameDecr.declineBtn.setVisible(true); 
 				}
 			}
@@ -182,7 +182,7 @@ public class EntryPoint {
 		int index = frameDecr.most_popular_degs.getSelectedIndex(); crypt.exp_decr = "";
 		if(index >= 0){
 			crypt.decrypt(crypt.exp_encr,  crypt.modelCount[index]);
-			frameDecr.decrText.setText("Сдвиг " +  crypt.modelCount[index] + ": " + crypt.exp_decr);
+			frameDecr.decrText.setText("РЎРґРІРёРі " +  crypt.modelCount[index] + ": " + crypt.exp_decr);
 		}
 	}
 	
@@ -254,7 +254,7 @@ public class EntryPoint {
 				success = Integer.parseInt(divs[1]);
 				if(crypt.count[s] == success) { 
 					crypt.modelCount[indexForMenu] = deg;
-					frameDecr.most_popular_degs.addItem("Сдвиг " + deg + ". Удачных: " + success); 
+					frameDecr.most_popular_degs.addItem("РЎРґРІРёРі " + deg + ". РЈРґР°С‡РЅС‹С…: " + success); 
 					indexForMenu++;
 				}
 			}catch(ArrayIndexOutOfBoundsException ex) { break; }
@@ -264,7 +264,7 @@ public class EntryPoint {
 	void report(){
 		reportFile = new File(crypt.PATH_TO_FILE + "//report");
 		if(!reportFile.exists())
-			try { reportFile.createNewFile(); System.out.println("Файл статистики успешно создан."); } 
+			try { reportFile.createNewFile(); System.out.println("Р¤Р°Р№Р» СЃС‚Р°С‚РёСЃС‚РёРєРё СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ."); } 
 		catch (IOException e) { throwError(create); }
 		
 		int s = 0;
@@ -312,12 +312,12 @@ public class EntryPoint {
 	void throwError(String err){
 		String text = "";
 		switch(err) {
-		case "create": text = "Не удалось создать файл."; break;
-		case "write": text = "Не удалось записать в файл."; break;
-		case "digit": text = "Необходимо ввести цифру"; break;
-		case "read": text = "Не удалось прочитать файл"; break;
-		case "nullm": text = "Пустое меню успешных сдвигов"; break;
-		default: text = "Неизвестная ошибка"; break;
+		case "create": text = "РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ С„Р°Р№Р»."; break;
+		case "write": text = "РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РїРёСЃР°С‚СЊ РІ С„Р°Р№Р»."; break;
+		case "digit": text = "РќРµРѕР±С…РѕРґРёРјРѕ РІРІРµСЃС‚Рё С†РёС„СЂСѓ"; break;
+		case "read": text = "РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ С„Р°Р№Р»"; break;
+		case "nullm": text = "РџСѓСЃС‚РѕРµ РјРµРЅСЋ СѓСЃРїРµС€РЅС‹С… СЃРґРІРёРіРѕРІ"; break;
+		default: text = "РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕС€РёР±РєР°"; break;
 		}
 		
 				crypt.source = 
@@ -325,7 +325,7 @@ public class EntryPoint {
 				crypt.exp_encr = "";
 				
 		frame.status.setText(text);
-		JOptionPane.showMessageDialog(null, text, "Ошибка", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, text, "РћС€РёР±РєР°", JOptionPane.ERROR_MESSAGE);
 		System.err.println(text);
 		return;
 	}
