@@ -105,11 +105,8 @@ public class EntryPoint {
 		
 		frameDecr.setVisible(true);
 		
-		int deg = 1;
-		
-		crypt.decrypt(crypt.exp_encr, deg);
-		frameDecr.decrText.setText("Сдвиг " + deg + ": " + crypt.exp_decr);
-		
+		crypt.decrypt(crypt.exp_encr, 1);
+		frameDecr.decrText.setText("Сдвиг 1: " + crypt.exp_decr);
 		
 		eventAccept = new MouseAdapter() {
 			@Override
